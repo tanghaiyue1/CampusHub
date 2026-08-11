@@ -1,0 +1,19 @@
+# @file .gitattributes
+# @description Git 属性：换行符、合并策略等
+
+# 所有文本文件在检出时自动转换为当前系统的换行符，提交时统一转为 LF
+* text=auto
+
+# 明确指定某些文件类型始终使用 LF（推荐）
+*.js text eol=lf
+*.vue text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+
+# 二进制文件不处理
+*.png binary
+*.jpg binary
+*.ico binary

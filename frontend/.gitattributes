@@ -1,0 +1,4 @@
+# @file frontend/.gitattributes
+# @description 前端 Git 属性
+
+* text=auto eol=lf

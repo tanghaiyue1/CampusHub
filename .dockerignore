@@ -1,0 +1,9 @@
+﻿node_modules
+.git
+.env
+*.log
+dist
+coverage
+.campushub
+credentials.enc
+.salt

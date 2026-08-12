@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, onMounted } from "vue";
+import { ref, nextTick } from "vue";
 import { aiChat } from "../api/ai";
 
 const messages = ref([]);
@@ -94,7 +94,7 @@ async function send() {
     }));
     const res = await aiChat(chatMessages);
     messages.value.push({ role: "assistant", content: res.data.reply });
-  } catch (err) {
+  } catch (_err) {
     messages.value.push({
       role: "assistant",
       content: "抱歉，AI 服务暂时不可用。请检查 API Key 配置。",

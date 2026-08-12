@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "frontend",
   "version": "0.0.0",
   "description": "CampusHub 前端（Vue 3 + Vite + Pinia）",

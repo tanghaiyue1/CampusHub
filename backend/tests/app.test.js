@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file backend/tests/app.test.js
  * @description 应用冒烟测试（健康检查等）
  */
@@ -22,7 +22,7 @@ describe('GET /api/hello', () => {
     const res = await request(app).get('/api/hello');
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty('message');
-    expect(res.body.message).toBe('Hello from CampusHub backend!');
+    expect(res.body.message).toBe('Hello from CampusHub AI backend!');
   });
 });
 

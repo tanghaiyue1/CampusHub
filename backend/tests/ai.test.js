@@ -1,9 +1,9 @@
 ﻿/**
  * @file backend/tests/ai.test.js
  * @description AI 服务单元测试：使用 mock 验证需求分析和凭据管理
+ *
+ * vitest globals 模式已启用（describe, it, expect, vi 全局可用）
  */
-
-const { describe, it, expect, vi, beforeEach } = require("vitest");
 
 // Mock credentialManager
 vi.mock("../src/lib/credentialManager", () => ({
@@ -53,7 +53,7 @@ describe("AI Service", () => {
 
       global.fetch.mockResolvedValueOnce(mockResponse);
 
-      const aiService = require("../src/services/aiService");
+      const aiService = await import("../src/services/aiService");
       const result = await aiService.analyzeRequirement(
         "帮我取快递",
         "菜鸟驿站的快递，下午3点之前取"
@@ -65,10 +65,10 @@ describe("AI Service", () => {
     });
 
     it("should handle API key missing error", async () => {
-      const credentialManager = require("../src/lib/credentialManager");
+      const credentialManager = await import("../src/lib/credentialManager");
       credentialManager.getApiKey.mockReturnValueOnce(null);
 
-      const aiService = require("../src/services/aiService");
+      const aiService = await import("../src/services/aiService");
       await expect(
         aiService.analyzeRequirement("test", "test")
       ).rejects.toThrow("未配置");
@@ -93,7 +93,7 @@ describe("AI Service", () => {
 
       global.fetch.mockResolvedValueOnce(mockResponse);
 
-      const aiService = require("../src/services/aiService");
+      const aiService = await import("../src/services/aiService");
       const result = await aiService.chat(
         [{ role: "user", content: "你好" }],
         { userId: 1, nickname: "测试用户" }
@@ -105,8 +105,8 @@ describe("AI Service", () => {
   });
 
   describe("getStatus", () => {
-    it("should return credential status", () => {
-      const aiService = require("../src/services/aiService");
+    it("should return credential status", async () => {
+      const aiService = await import("../src/services/aiService");
       const status = aiService.getStatus();
       expect(status.providers.openai.configured).toBe(true);
     });
@@ -127,15 +127,12 @@ describe("AI Routes", () => {
 describe("Credential Manager", () => {
   it("should support unlock/lock cycle", () => {
     const cm = require("../src/lib/credentialManager");
-    // 解锁和锁定不抛异常
     expect(() => cm.lock()).not.toThrow();
   });
 
   it("getApiKey should return null when not configured", () => {
     const cm = require("../src/lib/credentialManager");
-    // 未解锁时从环境变量获取
     const key = cm.getApiKey("openai");
-    // 可能为 null 或环境变量值，两者都接受
     expect(key === null || typeof key === "string").toBe(true);
   });
 });

@@ -117,10 +117,11 @@ function sendQuick(question) {
   flex-direction: column;
   height: 100%;
   max-height: 500px;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius);
   overflow: hidden;
-  background: #fff;
+  background: var(--ch-surface);
+  box-shadow: var(--ch-shadow-sm);
 }
 
 .chat-messages {
@@ -134,7 +135,7 @@ function sendQuick(question) {
 
 .chat-empty {
   text-align: center;
-  color: #666;
+  color: var(--ch-text-secondary);
   padding: 20px;
 }
 
@@ -153,19 +154,19 @@ function sendQuick(question) {
 }
 
 .quick-btn {
-  background: #f0f7ff;
-  border: 1px solid #b3d4ff;
-  border-radius: 16px;
+  background: var(--ch-primary-muted);
+  border: 1px solid var(--ch-primary-soft);
+  border-radius: 20px;
   padding: 6px 14px;
   font-size: 13px;
   cursor: pointer;
-  color: #0052cc;
-  transition: all 0.2s;
+  color: var(--ch-primary-hover);
+  transition: all 0.2s ease;
 }
 
 .quick-btn:hover {
-  background: #d6ebff;
-  border-color: #80b3ff;
+  background: var(--ch-primary-soft);
+  border-color: var(--ch-primary);
 }
 
 .message {
@@ -192,12 +193,12 @@ function sendQuick(question) {
   justify-content: center;
   font-size: 18px;
   flex-shrink: 0;
-  background: #f5f5f5;
+  background: var(--ch-bg);
 }
 
 .message-content {
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 14px;
   line-height: 1.5;
   white-space: pre-wrap;
@@ -205,14 +206,14 @@ function sendQuick(question) {
 }
 
 .message.user .message-content {
-  background: #0052cc;
+  background: var(--ch-primary);
   color: #fff;
   border-bottom-right-radius: 4px;
 }
 
 .message.assistant .message-content {
-  background: #f5f5f5;
-  color: #333;
+  background: var(--ch-bg);
+  color: var(--ch-text);
   border-bottom-left-radius: 4px;
 }
 
@@ -227,7 +228,7 @@ function sendQuick(question) {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #999;
+  background: var(--ch-text-muted);
   animation: typing 1.4s infinite;
 }
 
@@ -255,41 +256,43 @@ function sendQuick(question) {
 .chat-input {
   display: flex;
   padding: 12px;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--ch-border);
   gap: 8px;
 }
 
 .chat-input input {
   flex: 1;
   padding: 10px 14px;
-  border: 1px solid #ddd;
-  border-radius: 20px;
+  border: 1px solid var(--ch-border);
+  border-radius: 24px;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .chat-input input:focus {
-  border-color: #0052cc;
+  border-color: var(--ch-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
 }
 
 .chat-input button {
   padding: 10px 20px;
-  background: #0052cc;
+  background: var(--ch-primary);
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 24px;
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .chat-input button:hover:not(:disabled) {
-  background: #003d99;
+  background: var(--ch-primary-hover);
 }
 
 .chat-input button:disabled {
-  background: #ccc;
+  background: var(--ch-border-strong);
   cursor: not-allowed;
 }
 </style>

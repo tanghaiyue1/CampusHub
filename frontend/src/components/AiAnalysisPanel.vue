@@ -95,17 +95,20 @@ function applyResult() {
 
 .analyze-btn {
   padding: 10px 20px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: var(--ch-primary);
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--ch-radius-sm);
   font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.2);
 }
 
 .analyze-btn:hover:not(:disabled) {
-  opacity: 0.9;
+  background: var(--ch-primary-hover);
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
 }
 
 .analyze-btn:disabled {
@@ -115,22 +118,22 @@ function applyResult() {
 
 .error-msg {
   margin-top: 8px;
-  color: #ff5630;
+  color: var(--ch-danger);
   font-size: 13px;
 }
 
 .result-card {
   margin-top: 12px;
-  background: #f8f9ff;
-  border: 1px solid #d6dbff;
-  border-radius: 12px;
+  background: var(--ch-primary-muted);
+  border: 1px solid var(--ch-primary-soft);
+  border-radius: var(--ch-radius);
   padding: 16px;
 }
 
 .result-card h4 {
   font-size: 15px;
   margin-bottom: 12px;
-  color: #4c51bf;
+  color: var(--ch-primary-hover);
 }
 
 .result-grid {
@@ -148,24 +151,25 @@ function applyResult() {
 
 .label {
   font-size: 12px;
-  color: #888;
+  color: var(--ch-text-muted);
 }
 
 .value {
   font-size: 14px;
   font-weight: 600;
+  color: var(--ch-text);
 }
 
 .risk-low {
-  color: #36b37e;
+  color: var(--ch-success);
 }
 
 .risk-medium {
-  color: #ffab00;
+  color: var(--ch-accent);
 }
 
 .risk-high {
-  color: #ff5630;
+  color: var(--ch-danger);
 }
 
 .result-tags {
@@ -177,11 +181,12 @@ function applyResult() {
 }
 
 .tag {
-  background: #e8eaff;
-  color: #4c51bf;
+  background: var(--ch-primary-soft);
+  color: var(--ch-primary-hover);
   padding: 2px 10px;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 12px;
+  font-weight: 500;
 }
 
 .result-suggestion {
@@ -191,21 +196,23 @@ function applyResult() {
 .result-suggestion p {
   margin-top: 4px;
   font-size: 13px;
-  color: #555;
+  color: var(--ch-text-secondary);
   line-height: 1.5;
 }
 
 .apply-btn {
   padding: 8px 16px;
-  background: #4c51bf;
+  background: var(--ch-primary);
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--ch-radius-sm);
   font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .apply-btn:hover {
-  background: #3c40a6;
+  background: var(--ch-primary-hover);
 }
 </style>

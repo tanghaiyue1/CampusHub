@@ -1,4 +1,4 @@
-﻿<!-- @file frontend/src/App.vue — 根布局：顶栏导航、路由出口、页脚 -->
+<!-- @file frontend/src/App.vue — 根布局：顶栏导航、路由出口、页脚 -->
 
 <template>
   <div class="app-shell">
@@ -164,13 +164,11 @@ async function logout() {
   background: var(--ch-primary-soft);
 }
 
-.nav-link-ai {
-  color: #667eea !important;
-}
+.nav-link-ai { color: var(--ch-primary) !important; }
 
 .nav-link-ai.router-link-active {
-  background: linear-gradient(135deg, #667eea15, #764ba215) !important;
-  color: #4c51bf !important;
+  background: var(--ch-primary-soft) !important;
+  color: var(--ch-primary-hover) !important;
 }
 
 .nav-link-badge {

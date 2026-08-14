@@ -1,4 +1,4 @@
-﻿# CampusHub AI — 智能校园互助服务平台
+# CampusHub AI — 智能校园互助服务平台
 
 > AI4SE 期末项目 · B 类 · 非 harness 应用类项目
 > 基于 CampusHub 改造，集成 AI 需求分析和校园助手
@@ -163,22 +163,6 @@ GitHub Actions 配置（`.github/workflows/ci.yml`）包含以下 job：
 | `frontend-test` | 前端 lint + test |
 | `docker-build` | 构建 Docker 镜像 |
 
-## 部署
-
-### 云端部署
-
-- **平台**：Railway / Render
-- **地址**：待部署后更新
-- **架构**：前端 Nginx → 后端 Express → MySQL / 内存存储
-
-### 部署步骤
-
-1. 在 GitHub Actions 中构建 Docker 镜像
-2. 推送到 GitHub Container Registry
-3. 在 Railway/Render 中拉取镜像并部署
-4. 配置环境变量（JWT_SECRET、AI_PROVIDER 等）
-5. 运行凭据设置脚本
-
 ## 安全边界
 
 - **凭据安全**：API Key 使用 AES-256-GCM 加密存储，绝不硬编码或提交到 Git
@@ -224,7 +208,6 @@ docker-compose up -d
 - 内存数据库模式仅用于开发/测试，生产需配置 MySQL
 - Docker 镜像基于 Alpine Linux，x86_64 架构
 - 凭据存储在容器内，重启后需重新解锁
-- 前端配置的 API 地址需根据部署环境调整
 
 ## 第三方代码
 

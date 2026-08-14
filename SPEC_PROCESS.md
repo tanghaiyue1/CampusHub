@@ -8,7 +8,7 @@
 
 ### 1.1 原始想法
 
-将现有的 CampusHub 校园互助平台改造成 AI4SE 课程项目。CampusHub 是一个完整的校园服务市场，已有 7 个核心模块，但缺少 AI 元素。
+CampusHub 是一个完整的校园服务市场，已有 7 个核心模块，但缺少 AI 元素。
 
 ### 1.2 Brainstorming 过程
 

@@ -1,4 +1,4 @@
-﻿# PLAN.md — CampusHub AI 实施计划
+# PLAN.md — CampusHub AI 实施计划
 
 > 使用 Superpowers 方法论：Spec → Plan → Subagent Tasks → Review → Done
 
@@ -34,12 +34,12 @@
 - [x] 添加 JWT 鉴权保护
 - [x] 添加 API 路由测试
 
-## 阶段 4：前端 AI 界面（待完成）
+## 阶段 4：前端 AI 界面（已完成）
 
-- [ ] 添加 AI 助手聊天组件
-- [ ] 在需求发布页面集成 AI 分析按钮
-- [ ] 添加凭据管理设置页面
-- [ ] 前端测试
+- [x] 添加 AI 助手聊天组件
+- [x] 在需求发布页面集成 AI 分析按钮
+- [x] 添加凭据管理设置页面
+- [x] 前端测试
 
 ## 阶段 5：Docker 分发（已完成）
 
@@ -51,7 +51,7 @@
 
 ## 阶段 6：CI/CD（已完成）
 
-- [x] 编写 `.gitlab-ci.yml`
+- [x] 编写 `.github/workflows/ci.yml`
 - [x] 配置 `unit-test` job（必须）
 - [x] 配置 Docker 构建 job
 - [x] 配置前端/后端分离测试
@@ -64,13 +64,6 @@
 - [x] AGENT_LOG.md
 - [x] REFLECTION.md
 - [x] README.md 更新
-
-## 阶段 8：云部署（待完成）
-
-- [ ] 选择部署平台（Railway / Render）
-- [ ] 配置环境变量
-- [ ] 部署并验证
-- [ ] 记录公网 URL
 
 ---
 
@@ -103,7 +96,7 @@
 
 ### Task 6: ci-cd（CI/CD 配置）
 - **技能**：coding
-- **范围**：`.gitlab-ci.yml`
+- **范围**：`.github/workflows/ci.yml`
 - **完成标准**：unit-test job pass
 
 ### Task 7: frontend-ai（前端 AI 界面）
